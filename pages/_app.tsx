@@ -13,6 +13,7 @@ import { wrapper } from '../common/client/store';
 import { RootState } from '../common/client/store';
 
 const CssBaseline = dynamic(() => import('@material-ui/core/CssBaseline'));
+const AppBar = dynamic(() => import('../common/client/components/AppBar'));
 
 const useStyles = makeStyles<Theme>((theme: Theme) => ({
   root: {
@@ -71,7 +72,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <CssBaseline />
         <div className={classes.root}>
           <header>
-            {/* <AppBar /> */}
+            <AppBar />
             {/* <Drawer /> */}
           </header>
           <main className={classes.content}>
