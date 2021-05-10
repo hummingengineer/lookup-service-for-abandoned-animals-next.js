@@ -1,19 +1,18 @@
 import clsx from 'clsx';
-import dynamic from 'next/dynamic';
 import { useCallback } from 'react';
 import { makeStyles, Theme } from '@material-ui/core/styles';
 import { useSelector, useDispatch } from 'react-redux';
 
+import AppBarMaterial from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import Typography from '@material-ui/core/Typography';
+import Switch from '@material-ui/core/Switch';
+
 import { RootState } from '../../store';
 import { toggle as toggleDrawer } from '../../store/drawer';
 import { toggle as toggleDarkTheme } from '../../store/darkTheme';
-
-const AppBarMaterial = dynamic(() => import('@material-ui/core/AppBar'));
-const Toolbar = dynamic(() => import('@material-ui/core/Toolbar'));
-const IconButton = dynamic(() => import('@material-ui/core/IconButton'));
-const MenuIcon = dynamic(() => import('@material-ui/icons/Menu'));
-const Typography = dynamic(() => import('@material-ui/core/Typography'));
-const Switch = dynamic(() => import('@material-ui/core/Switch'));
 
 const useStyles = makeStyles<Theme, { drawerWidth: number }>((theme: Theme) => ({
   appBar: {

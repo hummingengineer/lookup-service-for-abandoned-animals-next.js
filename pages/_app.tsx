@@ -9,11 +9,13 @@ import { makeStyles, Theme, createMuiTheme, ThemeProvider } from '@material-ui/c
 import orange from '@material-ui/core/colors/orange';
 import deepOrange from '@material-ui/core/colors/deepOrange';
 
+import CssBaseline from '@material-ui/core/CssBaseline';
+
 import { wrapper } from '../common/client/store';
 import { RootState } from '../common/client/store';
 
-const CssBaseline = dynamic(() => import('@material-ui/core/CssBaseline'));
 const AppBar = dynamic(() => import('../common/client/components/AppBar'));
+const Drawer = dynamic(() => import('../common/client/components/Drawer'));
 
 const useStyles = makeStyles<Theme>((theme: Theme) => ({
   root: {
@@ -73,7 +75,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <div className={classes.root}>
           <header>
             <AppBar />
-            {/* <Drawer /> */}
+            <Drawer />
           </header>
           <main className={classes.content}>
             <div className={classes.appBarSpacer} />
