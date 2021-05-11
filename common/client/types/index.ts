@@ -13,3 +13,13 @@ export interface DrawerState {
 }
 
 export type DrawerAction = ReturnType<typeof toggleDrawer>;
+
+export interface Row {
+  popfile: string;
+  processState: string;
+  happenDt: string;
+  kindCd: string;
+  happenPlace: string;
+  careAddr: string;
+  careTel: string;
+}

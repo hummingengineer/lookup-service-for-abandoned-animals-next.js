@@ -5,7 +5,7 @@ import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer } from 'recha
 import useChart from '../../hooks/useChart';
 
 const Title = dynamic(() => import('../Title'));
-const Loading = dynamic<{}>(() => import('../Loading').then((mod) => mod.ChartLoading));
+const Loading = dynamic<{}>(() => import('../Loading').then((mod) => mod.LoadingWithTitle));
 const Error = dynamic(() => import('../Error'));
 
 export default function Chart() {

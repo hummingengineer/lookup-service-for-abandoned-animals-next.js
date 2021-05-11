@@ -5,7 +5,7 @@ export default function Loading() {
   return <Skeleton variant="rect" width="100%" height="100%" />;
 }
 
-export function ChartLoading() {
+export function LoadingWithTitle() {
   return (
     <>
       <Typography component="h2" variant="h6" color="primary" gutterBottom>
