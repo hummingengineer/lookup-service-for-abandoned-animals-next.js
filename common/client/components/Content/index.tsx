@@ -32,7 +32,7 @@ export function Dashboard() {
         {/* Chart */}
         <Grid item xs={12} md={8} lg={9}>
           <Paper className={clsx(classes.paper, classes.space, classes.fixedHeight)}>
-            {/* <Chart /> */}
+            <Chart />
           </Paper>
         </Grid>
       </Grid>
