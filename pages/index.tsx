@@ -1,9 +1,7 @@
 import dynamic from 'next/dynamic';
 
-const Content = dynamic<{}>(() =>
-  import('../common/client/components/Content').then((mod) => mod.Dashboard)
-);
+const Dashboard = dynamic(() => import('../common/client/components/Dashboard'));
 
 export default function Home() {
-  return <Content />;
+  return <Dashboard />;
 }

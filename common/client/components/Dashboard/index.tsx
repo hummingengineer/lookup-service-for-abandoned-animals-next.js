@@ -36,7 +36,7 @@ const useStyles = makeStyles<Theme>((theme: Theme) => ({
   },
 }));
 
-export function Dashboard() {
+export default function Dashboard() {
   const classes = useStyles();
 
   const { data, isLoading, isError } = useQuery(
