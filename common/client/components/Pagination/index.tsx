@@ -1,7 +1,16 @@
+import React, { ChangeEvent } from 'react';
 import Grid from '@material-ui/core/Grid';
 import PaginationMaterial from '@material-ui/lab/Pagination';
 
-export default function Pagination({ page, totalPage, handleForm }) {
+function Pagination({
+  page,
+  totalPage,
+  handleForm,
+}: {
+  page: number;
+  totalPage: number;
+  handleForm: (event: ChangeEvent<unknown>, name: string, value: number) => void;
+}) {
   return (
     <Grid container justify="center">
       <PaginationMaterial
@@ -13,3 +22,5 @@ export default function Pagination({ page, totalPage, handleForm }) {
     </Grid>
   );
 }
+
+export default React.memo(Pagination);
