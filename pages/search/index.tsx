@@ -6,7 +6,7 @@ const Pagination = dynamic(() => import('../../common/client/components/Paginati
 const Fab = dynamic(() => import('../../common/client/components/Fab'));
 
 export default function Search() {
-  const [form, setForm] = useState({
+  const [criteria, setCriteria] = useState({
     bgnde: '',
     endde: '',
     upkind: '',
@@ -20,9 +20,10 @@ export default function Search() {
     neuter_yn: '',
   });
 
-  const handleForm = useCallback((event, name, value) => {
-    if (name === 'pageNo') setForm({ ...form, [name]: value + '' });
-    else setForm({ ...form, [name]: value + '' });
+  const handleCriteria = useCallback((event, name, value) => {
+    if (name === 'pageNo') setCriteria((prev) => ({ ...prev, [name]: value + '' }));
+    else if (name === 'submit') setCriteria((prev) => ({ ...prev, ...value }));
+    else setCriteria((prev) => ({ ...prev, [name]: value + '' }));
   }, []);
 
   const totalCount = '100';
@@ -31,11 +32,11 @@ export default function Search() {
     <>
       {/* <Album /> */}
       <Pagination
-        page={parseInt(form.pageNo)}
-        totalPage={Math.ceil(parseInt(totalCount) / parseInt(form.numOfRows))}
-        handleForm={handleForm}
+        page={parseInt(criteria.pageNo)}
+        totalPage={Math.ceil(parseInt(totalCount) / parseInt(criteria.numOfRows))}
+        handleCriteria={handleCriteria}
       />
-      <Fab />
+      <Fab handleCriteria={handleCriteria} />
     </>
   );
 }
