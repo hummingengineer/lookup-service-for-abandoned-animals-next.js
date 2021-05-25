@@ -1,8 +1,7 @@
 import dynamic from 'next/dynamic';
 import { useState, useCallback } from 'react';
 
-// const Album = dynamic(() => import('../../common/client/components/Album'));
-const Pagination = dynamic(() => import('../../common/client/components/Pagination'));
+const Album = dynamic(() => import('../../common/client/components/Album'));
 const Fab = dynamic(() => import('../../common/client/components/Fab'));
 
 export default function Search() {
@@ -22,20 +21,13 @@ export default function Search() {
 
   const handleCriteria = useCallback((event, name, value) => {
     if (name === 'pageNo') setCriteria((prev) => ({ ...prev, [name]: value + '' }));
-    else if (name === 'submit') setCriteria((prev) => ({ ...prev, ...value }));
+    else if (name === 'submit') setCriteria((prev) => ({ ...prev, ...value, pageNo: '1' }));
     else setCriteria((prev) => ({ ...prev, [name]: value + '' }));
   }, []);
 
-  const totalCount = '100';
-
   return (
     <>
-      {/* <Album /> */}
-      <Pagination
-        page={parseInt(criteria.pageNo)}
-        totalPage={Math.ceil(parseInt(totalCount) / parseInt(criteria.numOfRows))}
-        handleCriteria={handleCriteria}
-      />
+      <Album criteria={criteria} handleCriteria={handleCriteria} />
       <Fab handleCriteria={handleCriteria} />
     </>
   );

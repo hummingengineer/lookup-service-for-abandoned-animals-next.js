@@ -15,7 +15,7 @@ const Card = dynamic<{ popfile: string; kindCd: string; processState: string }>(
 );
 const Table = dynamic<{ rows: Array<Row> }>(() => import('../Table'));
 const CardLoading = dynamic(() => import('../Loading'));
-const TableLoading = dynamic<{}>(() => import('../Loading').then((mod) => mod.LoadingWithTitle));
+const TableLoading = dynamic<{}>(() => import('../Loading').then((mod) => mod.TableLoading));
 const Error = dynamic(() => import('../Error'));
 
 const useStyles = makeStyles<Theme>((theme: Theme) => ({

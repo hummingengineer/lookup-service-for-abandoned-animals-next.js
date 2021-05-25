@@ -31,7 +31,7 @@ export async function chartFetcher(numOfDays: number, includeToday: boolean) {
   const start: Date = new Date(end.getFullYear(), end.getMonth(), end.getDate() - (numOfDays - 1));
 
   const fetchers = getDates(start, end, '').map((date) =>
-    fetcher(`{ abandonmentPublic(bgnde: "${date}" endde: "${date}") { totalCount } }`)
+    fetcher(`{ abandonmentPublic(bgnde: "${date}", endde: "${date}") { totalCount } }`)
   );
 
   const datas = await Promise.all(fetchers);

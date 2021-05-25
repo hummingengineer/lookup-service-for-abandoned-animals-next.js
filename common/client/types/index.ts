@@ -55,3 +55,42 @@ export interface Kind {
   kindCd: string;
   KNm: string;
 }
+
+export interface Criteria {
+  bgnde: string;
+  endde: string;
+  upkind: string;
+  kind: string;
+  sido: string;
+  sigungu: string;
+  shelter: string;
+  state: string;
+  pageNo: string;
+  numOfRows: string;
+  neuter_yn: string;
+}
+
+export interface Card {
+  age: string;
+  careAddr: string;
+  careNm: string;
+  careTel: string;
+  chargeNm: string;
+  colorCd: string;
+  desertionNo: string;
+  happenDt: string;
+  happenPlace: string;
+  kindCd: string;
+  neuterYn: string;
+  noticeComment: string;
+  noticeEdt: string;
+  noticeNo: string;
+  noticeSdt: string;
+  officetel: string;
+  orgNm: string;
+  popfile: string;
+  processState: string;
+  sexCd: string;
+  specialMark: string;
+  weight: string;
+}
