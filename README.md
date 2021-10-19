@@ -1,5 +1,8 @@
 # lookup-service-for-abandoned-animals-next.js
 
+![screenshot1](https://github.com/hummingengineer/lookup-service-for-abandoned-animals-next.js/blob/master/screenshot1.png)
+![screenshot2](https://github.com/hummingengineer/lookup-service-for-abandoned-animals-next.js/blob/master/screenshot2.png)
+
 Web application for searching abandoned animals built with NextJS
 
 ## Project Setup
